@@ -11,6 +11,7 @@ Summary
 
 Features
 -------
+- Minimal af
 - Floating only.
 - Fullscreen toggle.
 - Window centering.
