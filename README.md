@@ -54,3 +54,17 @@ Aditional programs
 | `XF86_MonBrightnessUp`   | brightness up    | `light`        |
 | `XF86_MonBrightnessDown` | brightness down  | `light`        |
 
+
+
+
+Installation
+------------
+
+Need Xlib, then:
+    $ make
+    # make clean install
+
+Bugs
+----
+ * No bugs for the moment ;) (I mean, no importants bugs ;)
+
