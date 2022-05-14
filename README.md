@@ -61,8 +61,8 @@ Installation
 ------------
 
 Need Xlib, then:
-    $ make
-    # make clean install
+    `$ make`
+    `# make clean install`
 
 Bugs
 ----
