@@ -1,5 +1,5 @@
 
 # ewm ( Elite Window Manager )
 
-<a href="https://github.com/Iyamnabeen/ewm/blob/main/Ouu/ok.png?raw=true"></a>
+<a href="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ok.png"></a>
 
