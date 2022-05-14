@@ -1,5 +1,8 @@
 # sowm ( Elite optimised* Window Manager )
-
+Summary
+-------
+ewm is a very simple and lightweight tiling window manager.
+I will try to stay under 1000 SLOC.
 An itsy bitsy floating window manager (*220~ sloc!*).
 <a href="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ouu.jpg"><img src="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ouu.jpg" width="43%" align="right"></a>
 - Floating only.
