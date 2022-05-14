@@ -4,7 +4,7 @@ Summary
 
 ```diff
 + ewm is a very simple and lightweight tiling window manager.
-+ I will try to stay under 800 SLOC.
++ I will try to stay under 400 SLOC.
 ```
 
 <a href="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ouu.jpg"><img src="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ouu.jpg" width="43%" align="right"></a>
