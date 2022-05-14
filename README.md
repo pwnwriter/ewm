@@ -33,7 +33,7 @@ Default Keybindings
 | `MOD4` + `Right Mouse`     | resize window           |
 | `MOD4` + `f`               | maximize toggle         |
 | `MOD4` + `r`               | resize window(touchpads)|
-| `MOD4` + `c`               | center window           |
+| `MOD4` + `x`               | center window           |
 | `MOD4` + `c`               | kill window             |
 | `MOD4` + `1-6`             | desktop swap            |
 | `MOD4` + `Shift` +`1-6`    | send window to desktop  |
