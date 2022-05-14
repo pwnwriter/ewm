@@ -13,9 +13,7 @@ Features
 - Window centering.
 - Mix of mouse and keyboard workflow.
 - Focus with cursor.
-- 
-<a href="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ouu.jpg"><img src="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ok.jpg" width="43%" align="right"></a>
-
+ <a href="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ouu.jpg"><img src="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ok.jpg" width="43%" align="right"></a>
 - Alt-Tab window focusing.
 - All windows die on exit.
 - No window borders.
