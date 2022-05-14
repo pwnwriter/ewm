@@ -1,6 +1,12 @@
 # ewm ( Elite optimised* Window Manager )
 Summary
 -------
+
+```diff
++ ewm is a very simple and lightweight tiling window manager.
+I will try to stay under 8000 SLOC.
+```
+
 ewm is a very simple and lightweight tiling window manager.
 I will try to stay under 8000 SLOC.
 
