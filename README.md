@@ -66,5 +66,5 @@ Need Xlib, then:
 
 Bugs
 ----
- * No bugs for the moment ;) (You tell me 🙆‍♂️ ;)
+ * No bugs for the moment ;) ( left, You tell me 🙆‍♂️ ;)
 
