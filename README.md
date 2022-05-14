@@ -68,3 +68,11 @@ Bugs
 ----
  * No bugs for the moment ;) ( left, You tell me 🙆‍♂️ ;)
 
+
+Thanks
+------
+
+ * [The suckless team](http://suckless.org/)
+ * [Dylanaraps](https://github.com/dylanaraps)
+ * [Mrsafalpiya](https://github.com/mrsafalpiya)
+
