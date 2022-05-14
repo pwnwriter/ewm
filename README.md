@@ -3,7 +3,7 @@ Summary
 -------
 
 ```diff
-+ ewm is a very simple and lightweight tiling window manager.
++ ewm is a very simple and lightweight floating window manager.
 + I will try to stay under 400 SLOC.
 ```
 
