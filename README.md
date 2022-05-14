@@ -13,7 +13,7 @@ I will try to stay under 8000 SLOC.
 - Rounded corners (*[through patch](https://github.com/dylanaraps/sowm/pull/58)*)
 - Titlebars (*[through patch](https://github.com/dylanaraps/sowm/pull/57)*)
 
-<a href="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ouu.jpg"><img src="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ouu.jpg" width="43%" align="right"></a>
+<a href="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ouu.jpg"><img src="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ok.jpg" width="43%" align="right"></a>
 
 - Alt-Tab window focusing.
 - All windows die on exit.
