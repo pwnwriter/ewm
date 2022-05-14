@@ -23,3 +23,34 @@ Features
 - No EWMH.
 - etc etc etc
 
+Default Keybindings
+-------
+
+| combo                      | action                  |
+| -------------------------- | ------------------------|
+| `Mouse`                    | focus under cursor      |
+| `MOD4` + `Left Mouse`      | move window             |
+| `MOD4` + `Right Mouse`     | resize window           |
+| `MOD4` + `f`               | maximize toggle         |
+| `MOD4` + `r`               | resize window(touchpads)|
+| `MOD4` + `c`               | center window           |
+| `MOD4` + `c`               | kill window             |
+| `MOD4` + `1-6`             | desktop swap            |
+| `MOD4` + `Shift` +`1-6`    | send window to desktop  |
+| `MOD1` + `TAB` (*alt-tab*) | focus cycle             |
+
+Aditional programs 
+-------------------
+
+
+| combo                    | action           | program        |
+| ------------------------ | ---------------- | -------------- |
+| `MOD4` + `Return`        | terminal         | `st`           |
+| `MOD4` + `space`         | dmenu            | `dmenu_run`    |
+| `MOD4` + `p`             | maim             | `maim`         |
+| `XF86_AudioLowerVolume`  | volume down      | `amixer`       |
+| `XF86_AudioRaiseVolume`  | volume up        | `amixer`       |
+| `XF86_AudioMute`         | volume toggle    | `amixer`       |
+| `XF86_MonBrightnessUp`   | brightness up    | `light`        |
+| `XF86_MonBrightnessDown` | brightness down  | `light`        |
+
