@@ -3,15 +3,15 @@
 
 #define MOD Mod4Mask
 
-const char* menu[]    = {"dmenu_run",      0};
-const char* term[]    = {"st",             0};
-const char* scrot[]   = {"scr",            0};
-const char* briup[]   = {"light", "-A", "3", 0};
-const char* bridown[] = {"light", "-U", "3", 0};
+const char* menu[]    = {"dmenu_run",           0};
+const char* term[]    = {"st",                  0};
+const char* ss[]      = {"screenshot",          0};
+const char* ssel[]    = {"screenshot", "--none",0};
+const char* briup[]   = {"light", "-A", "3",    0};
+const char* bridown[] = {"light", "-U", "3",    0};
 const char* voldown[] = {"amixer", "sset", "Master", "5%-",         0};
 const char* volup[]   = {"amixer", "sset", "Master", "5%+",         0};
 const char* volmute[] = {"amixer", "sset", "Master", "toggle",      0};
-const char* colors[]  = {"bud", "/home/im/.walls", 0};
 
 static struct key keys[] = {
     {MOD,      XK_c,   win_kill,   {0}},
@@ -23,10 +23,10 @@ static struct key keys[] = {
     {Mod1Mask,           XK_Tab, win_next,   {0}},
     {Mod1Mask|ShiftMask, XK_Tab, win_prev,   {0}},
 
-    {MOD, XK_space,      run, {.com = menu}},
-    {MOD, XK_w,      run, {.com = colors}},
-    {MOD, XK_p,      run, {.com = scrot}},
-    {MOD, XK_Return, run, {.com = term}},
+    {MOD, XK_space,            run, {.com = menu}},
+    {MOD|ShiftMask, XK_p,      run, {.com = ss}},
+    {MOD, XK_p,                run,  {.com = ssel}},
+    {MOD, XK_Return,           run, {.com = term}},
 
     {0,   XF86XK_AudioLowerVolume,  run, {.com = voldown}},
     {0,   XF86XK_AudioRaiseVolume,  run, {.com = volup}},
@@ -47,5 +47,4 @@ static struct key keys[] = {
     {MOD,           XK_6, ws_go,     {.i = 6}},
     {MOD|ShiftMask, XK_6, win_to_ws, {.i = 6}},
 };
-
 #endif
