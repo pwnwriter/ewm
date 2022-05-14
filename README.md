@@ -1,4 +1,4 @@
-# sowm ( Elite optimised* Window Manager )
+# ewm ( Elite optimised* Window Manager )
 Summary
 -------
 ewm is a very simple and lightweight tiling window manager.
