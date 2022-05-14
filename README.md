@@ -1,4 +1,4 @@
-# sowm (*~~Simple~~ Shitty Opinionated Window Manager*
+# sowm ( Elite optimised* Window Manager )
 
 An itsy bitsy floating window manager (*220~ sloc!*).
 <a href="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ouu.jpg"><img src="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ouu.jpg" width="43%" align="right"></a>
