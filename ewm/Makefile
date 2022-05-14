@@ -1,4 +1,4 @@
-LAGS += -std=c99 -Wall -Wextra -pedantic -Wold-style-declaration
+LDFLAGS += -std=c99 -Wall -Wextra -pedantic -Wold-style-declaration
 CFLAGS += -Wmissing-prototypes -Wno-unused-parameter
 PREFIX ?= /usr
 BINDIR ?= $(PREFIX)/bin
