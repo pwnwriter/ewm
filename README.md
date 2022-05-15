@@ -1,5 +1,5 @@
 # ewm ( Elite optimized* Window Manager )
-<h3 align="center"><img src="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ewm-01.png" alt="logo" style="width:200px;"height="400px"></h3>
+<h3 align="center"><img src="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ewm.png" alt="logo" style="width:200px;"height="400px"></h3>
 
 ```diff
 + ewm is a very simple and lightweight floating window manager.
