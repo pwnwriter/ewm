@@ -1,6 +1,6 @@
 # ewm ( Elite optimized* Window Manager )
 <h3 align="center"><img src="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ewm-01.png" alt="logo" height="400px"></h3>
-<p align="center">A command-line system information tool written in bash 3.2+</p>
+<p align="center">Minimal window manager that can float +</p>
 
 Summary
 -------
