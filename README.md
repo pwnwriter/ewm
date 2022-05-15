@@ -1,4 +1,4 @@
-# ewm ( Elite optimised* Window Manager )
+# ewm ( Elite optimized* Window Manager )
 Summary
 -------
 
