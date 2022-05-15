@@ -1,10 +1,5 @@
 # ewm ( Elite optimized* Window Manager )
 <h3 align="center"><img src="https://raw.githubusercontent.com/Iyamnabeen/ewm/main/Ouu/ewm-01.png" alt="logo" height="400px"></h3>
-<p align="center">Minimal window manager that can float +</p>
-
-Summary
--------
-
 ```diff
 + ewm is a very simple and lightweight floating window manager.
 + I will try to stay under 400 SLOC.
