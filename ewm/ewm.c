@@ -1,5 +1,3 @@
-// sowm - An itsy bitsy floating window manager.
-
 #include <X11/Xlib.h>
 #include <X11/XF86keysym.h>
 #include <X11/keysym.h>

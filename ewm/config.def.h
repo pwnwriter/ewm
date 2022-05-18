@@ -1,11 +1,11 @@
 #ifndef CONFIG_H
 #define CONFIG_H
-
 #define MOD Mod4Mask
 
 const char* menu[]    = {"dmenu_run",           0};
 const char* term[]    = {"st",                  0};
 const char* ss[]      = {"screenshot",          0};
+//screensot is my custom script btw you can find on my iyamnabeen/scripts 
 const char* ssel[]    = {"screenshot", "--none",0};
 const char* briup[]   = {"light", "-A", "3",    0};
 const char* bridown[] = {"light", "-U", "3",    0};
