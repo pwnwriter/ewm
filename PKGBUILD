@@ -10,7 +10,7 @@ url="https://github.com/iyamnabeen/ewm"
 arch=('any')
 license=('GPL3')
 options=(zipman)
-depends=('libx11' 'libxinerama' 'libxft' 'freetype2' 
+depends=('libxinerama' 'freetype2' 
 )
 conflicts=('ewm')
 provides=("${pkgname}")
