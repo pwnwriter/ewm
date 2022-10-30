@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <signal.h>
 #include <unistd.h>
+#include <stddef.h>
 
 #include "ewm.h"
 
@@ -31,6 +32,18 @@ static void (*events[LASTEvent])(XEvent *e) = {
 };
 
 #include "config.h"
+
+void win_half(const Arg arg) {
+     char m = arg.com[0][0];
+
+     win_size(cur->w, &wx, &wy, &ww, &wh);
+
+     XMoveResizeWindow(d, cur->w, \
+        (m == 'w' ? (wx < 0 ? 0 : (unsigned)wx) : m == 'e' ? (wx + ww / 2) : wx < 0 ? 0 : (unsigned)wx),
+        (m == 'n' ? (wy < 0 ? 0 : (unsigned)wy) : m == 's' ? (wy + wh / 2) : wy < 0 ? 0 : (unsigned)wy),
+        (m == 'w' ? (ww / 2) : m == 'e' ? (ww / 2) : ww),
+        (m == 'n' ? (wh / 2) : m == 's' ? (wh / 2) : wh));
+}
 
 void win_focus(client *c) {
     cur = c;

@@ -1,6 +1,6 @@
-ewm/config.h
-ewm/*.o
-ewm/ewm
-ewm/*.diff
-ewm/*.orig
-ewm/*.rej
+src/config.h
+src/*.o
+src/ewm
+src/*.diff
+src/*.orig
+src/*.rej

@@ -51,6 +51,7 @@ void win_fs(const Arg arg);
 void win_focus(client *c);
 void win_kill(const Arg arg);
 void win_prev(const Arg arg);
+void win_half(const Arg arg);
 void win_next(const Arg arg);
 void win_to_ws(const Arg arg);
 void toggle_win_resize_mouse(const Arg arg);
