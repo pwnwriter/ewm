@@ -1,6 +1,0 @@
-src/config.h
-src/*.o
-src/ewm
-src/*.diff
-src/*.orig
-src/*.rej
