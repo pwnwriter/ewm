@@ -1,4 +1,4 @@
-SRC_DIR = source
+SRC_DIR = src
 
 all: build
 
