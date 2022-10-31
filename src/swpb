@@ -1,0 +1,68 @@
+#!/usr/bin/env sh
+
+##########################################
+# A pure sh script used in ewm           #
+##########################################
+# SHELLCHECK PASSED !
+
+# Global variable to generate Random number
+
+SSNAME=$(date +%N|sed s/...$//).png
+
+# poweroff menu
+
+POWEROFF() {
+	selected=$(printf "%s\n" "cancel" "shutdown" "reboot" "sleep" | dmenu)
+	if [ "$selected" =  "shutdown" ]; then
+		doas poweroff 
+	elif [ "$selected" = "reboot" ]; then
+               doas reboot
+        elif [ "$selected" = "sleep" ]; then
+               doas zzz
+        elif [ "$selected" = "cancel" ]; then
+ 		return
+	fi
+}
+
+# Take screenshot using imagemagick no selection menu
+
+SS_WITHOUT_SELECTION() {
+        import -window root ~/pix/ss/"$SSNAME"
+}
+
+# Take screenshot using imagemagick with selection menu
+
+SS_WITH_SELECTION() {
+        import ~/pix/ss/"$SSNAME"
+}
+
+# Search in browser directly through dmenu 
+Search(){
+    URL='https://duckduckgo.com/?q='
+    QUERY=$(echo '' | dmenu -p "Search:")
+    if [ -n "$QUERY" ]; then
+    xdg-open "${URL}${QUERY}" 2> /dev/null
+fi
+}
+
+# getopts implementation for arguments
+
+while getopts 'sbpw' OPTION; do
+  case "$OPTION" in 
+    s) 
+      SS_WITH_SELECTION ;;
+
+    b)
+      SS_WITHOUT_SELECTION ;;
+      
+    p) 
+        POWEROFF ;;
+   
+    w)
+        Search ;;
+
+    ?) 
+      exit 1
+      ;;
+  esac
+done
