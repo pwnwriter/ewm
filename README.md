@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/pwnwriter/files/main/ewm/logos/ewm_gradient.png"  width="300px"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/pwnwriter/files/main/ewm/logos/ewm_gradient.png"  height="150px" width="200px"></p>
 <h1 align="center">EWM</h1>
 <p align="center">An elegant window manager (*300~ sloc!*).</p><br>
 <p align="center">
@@ -14,9 +14,20 @@ important stuff. It has sane defaults, it strives to be minimal, compact, and fa
 ewm is a beautiful pearl that has window centering features.
 <br>
 
-## Gallery
+### Gallery
 
-|ewm_01.png|ewm_02.png|ewm_03.png|ewm_04.png|
-|--|--|--|--|
-|![png](https://raw.githubusercontent.com/pwnwriter/files/main/ewm/screenshots/kiss_ewm_01.png)|![png](https://raw.githubusercontent.com/pwnwriter/files/main/ewm/screenshots/kiss_ewm_02.png)|![png](https://raw.githubusercontent.com/pwnwriter/files/main/ewm/screenshots/kiss_ewm_03.png)|![png](https://raw.githubusercontent.com/pwnwriter/files/main/ewm/screenshots/kiss_ewm_05.png)|
-### More: \[[ WIKI ](https://github.com/pwnwriter/ewm/wiki)\] \[[ INSTALLATION ](https://github.com/pwnwriter/ewm/wiki/Installation)\] \[[ KEYBINDINGS ](https://github.com/pwnwriter/ewm/wiki/Keybindings)\]  
+ewm_01.png|ewm_02.png
+|--|--|
+![img](https://raw.githubusercontent.com/pwnwriter/files/main/ewm/screenshots/kiss_ewm_01.png)|![img](https://raw.githubusercontent.com/pwnwriter/files/main/ewm/screenshots/kiss_ewm_02.png)
+
+ewm_03.png|ewm_04.png
+|--|--|
+![img](https://raw.githubusercontent.com/pwnwriter/files/main/ewm/screenshots/kiss_ewm_07.png)|![img](https://raw.githubusercontent.com/pwnwriter/files/main/ewm/screenshots/kiss_ewm_04.png)
+
+ewm_05.png|ewm_06.png
+|--|--|
+![img](https://raw.githubusercontent.com/pwnwriter/files/main/ewm/screenshots/kiss_ewm_05.png)|![img](https://raw.githubusercontent.com/pwnwriter/files/main/ewm/screenshots/kiss_ewm_06.png)
+<br>
+
+### More: 
+\[[ WIKI ](https://github.com/pwnwriter/ewm/wiki)\] \[[ INSTALLATION ](https://github.com/pwnwriter/ewm/wiki/Installation)\] \[[ KEYBINDINGS ](https://github.com/pwnwriter/ewm/wiki/Keybindings)\]  
