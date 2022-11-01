@@ -1,8 +1,8 @@
-CFLAGS += -std=c99 -Wall -Wextra -pedantic -Wold-style-declaration
-CFLAGS += -Wmissing-prototypes -Wno-unused-parameter
-PREFIX ?= /usr
-BINDIR ?= $(PREFIX)/bin
-CC     ?= gcc
+LDFLAGS += -std=c99 -Wall -Wextra -pedantic -Wold-style-declaration
+CFLAGS 	+= -Wmissing-prototypes -Wno-unused-parameter
+PREFIX 	?= /usr
+BINDIR 	?= $(PREFIX)/bin
+CC     	?= gcc
 
 all: ewm
 
