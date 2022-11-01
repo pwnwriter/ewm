@@ -1,3 +1,5 @@
+/* ewm:- An elegant window manager that just floats perfectly */
+
 #include <X11/Xlib.h>
 #include <X11/XF86keysym.h>
 #include <X11/keysym.h>
@@ -8,6 +10,7 @@
 #include <stddef.h>
 
 #include "ewm.h"
+#include "config.h"
 
 static client       *list = {0}, *ws_list[10] = {0}, *cur;
 static int          ws = 1, sw, sh, wx, wy, numlock = 0;
@@ -31,7 +34,6 @@ static void (*events[LASTEvent])(XEvent *e) = {
     [MotionNotify]     = notify_motion
 };
 
-#include "config.h"
 
 void win_half(const Arg arg) {
      char m = arg.com[0][0];

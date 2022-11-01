@@ -1,27 +1,31 @@
 #!/usr/bin/env sh
 
-##########################################
-# A pure sh script used in ewm           #
-##########################################
-# SHELLCHECK PASSED !
+################################################
+#                                              #
+#       A pure sh script used in ewm           #
+#          SHELLCHECK PASSED                   #
+#                                              #
+################################################
 
 # Global variable to generate Random number
 
 SSNAME=$(date +%N|sed s/...$//).png
 
-# poweroff menu
+# poweroff selection menu
 
 POWEROFF() {
-	selected=$(printf "%s\n" "cancel" "shutdown" "reboot" "sleep" | dmenu)
+	selected=$(printf "%s\n" "cancel" "shutdown" "reboot" "sleep" "tty"| dmenu)
 	if [ "$selected" =  "shutdown" ]; then
 		doas poweroff 
 	elif [ "$selected" = "reboot" ]; then
-               doas reboot
+                doas reboot
         elif [ "$selected" = "sleep" ]; then
-               doas zzz
+                doas zzz
         elif [ "$selected" = "cancel" ]; then
  		return
-	fi
+        elif [ "$selected" = "tty" ]; then
+	        pkill x 
+        fi
 }
 
 # Take screenshot using imagemagick no selection menu
@@ -37,7 +41,7 @@ SS_WITH_SELECTION() {
 }
 
 # Search in browser directly through dmenu 
-Search(){
+Search() {
     URL='https://duckduckgo.com/?q='
     QUERY=$(echo '' | dmenu -p "Search:")
     if [ -n "$QUERY" ]; then
