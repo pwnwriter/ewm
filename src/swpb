@@ -28,15 +28,26 @@ POWEROFF() {
         fi
 }
 
+# Check the directory to save screenshots. Create one if not found.
+
+CHECK_SSDIR() {
+  if [ ! -d ~/pix/ss/ ]
+  then
+    mkdir -p ~/pix/ss
+  fi
+}
+
 # Take screenshot using imagemagick no selection menu
 
 SS_WITHOUT_SELECTION() {
+        CHECK_SSDIR
         import -window root ~/pix/ss/"$SSNAME"
 }
 
 # Take screenshot using imagemagick with selection menu
 
 SS_WITH_SELECTION() {
+        CHECK_SSDIR
         import ~/pix/ss/"$SSNAME"
 }
 
