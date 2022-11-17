@@ -13,6 +13,7 @@ const char* bridown[] = {"brillo", "-U", "3",    0};
 const char* voldown[] = {"pactl", "set-sink-volume", "0", "-5%",         NULL};
 const char* volup[]   = {"pactl", "set-sink-volume", "0", "+5%",         NULL};
 const char* volmute[] = {"pactl", "set-sink-mute",   "0", "toggle",      NULL};
+const char* scratch[] = {"st", 0};
 
 static struct key keys[] = {
    
@@ -31,6 +32,7 @@ static struct key keys[] = {
     {MOD|ShiftMask, XK_x,      run,  {.com = pmenu}},
     {MOD,           XK_w,      run,  {.com = wsearch}},
     {MOD,           XK_Return, run,  {.com = term}},
+    {MOD,           XK_grave,  scratchpad_toggle,  {.com = scratch}},
 
     {0,   XF86XK_AudioLowerVolume,  run, {.com = voldown}},
     {0,   XF86XK_AudioRaiseVolume,  run, {.com = volup}},
