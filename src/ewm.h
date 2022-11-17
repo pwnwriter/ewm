@@ -4,6 +4,7 @@
 #define ws_save(W) ws_list[W] = list
 #define ws_sel(W)  list = ws_list[ws = W]
 #define MAX(a, b)  ((a) > (b) ? (a) : (b))
+#define LEN(X)     (sizeof(X) / sizeof(X[0]))
 
 #define win_size(W, gx, gy, gw, gh) \
     XGetGeometry(d, W, &(Window){0}, gx, gy, gw, gh, \
@@ -30,6 +31,7 @@ typedef struct client {
     struct client *next, *prev;
     int f, wx, wy;
     unsigned int ww, wh;
+    int scratchpad; // WS of scratchpad; 0 = No scratchpad
     Window w;
 } client;
 
@@ -56,6 +58,7 @@ void win_next(const Arg arg);
 void win_to_ws(const Arg arg);
 void toggle_win_resize_mouse(const Arg arg);
 void ws_go(const Arg arg);
+void scratchpad_toggle(const Arg arg);
 void wm_quit(const Arg arg);
 
 static int xerror() { return 0; }

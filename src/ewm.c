@@ -18,6 +18,9 @@ static unsigned int ww, wh;
 static unsigned int running = 1;
 static unsigned int resize_mouse = 0;
 
+static unsigned int scratchtag = 9;  /* last tag reserved for scratchpad */
+static unsigned int new_scratch = 0; /* ws of the scratchpad */
+
 static Display      *d;
 static XButtonEvent mouse;
 static Window       root;
@@ -135,6 +138,12 @@ void win_add(Window w) {
         list->prev = list->next = list;
     }
 
+
+    if (new_scratch) {
+        c->scratchpad = new_scratch;
+        new_scratch = 0;
+    }
+
     ws_save(ws);
 }
 
@@ -180,6 +189,8 @@ void win_to_ws(const Arg arg) {
     int tmp = ws;
 
     if (arg.i == tmp) return;
+
+    new_scratch = cur->scratchpad;
 
     ws_sel(arg.i);
     win_add(cur->w);
@@ -305,6 +316,75 @@ void input_grab(Window root) {
                 GrabModeAsync, GrabModeAsync, 0, 0);
 
     XFreeModifiermap(modmap);
+}
+
+void scratchpad_toggle(const Arg arg) {
+    int clients_c = 0;
+    client *scratch_found = NULL;
+
+    for (int i = 1; i < LEN(ws_list); i++) {
+        client *c = ws_list[i];
+        if (c == NULL)
+            continue;
+
+        Window w_temp = c->w;
+        int is_first = 1;
+
+        for (;is_first != (c->w != w_temp); is_first = 0, c = c->next) {
+            if (c->scratchpad) {
+                scratch_found = c;
+                break;
+            }
+        }
+
+        if (scratch_found)
+            break;
+    }
+
+    // Scratchpad not found.
+
+    if (!scratch_found) {
+        new_scratch = ws;
+        run(arg);
+        return;
+    }
+
+    // Scratchpad is on current workspace. So let's hide it.
+
+    if (scratch_found->scratchpad == ws) {
+        int temp_ws = ws;
+
+        ws_sel(scratchtag);
+        new_scratch = scratchtag;
+        win_add(scratch_found->w);
+        ws_save(scratchtag);
+
+        ws_sel(temp_ws);
+        win_del(scratch_found->w);
+        ws_save(temp_ws);
+
+        XUnmapWindow(d, scratch_found->w);
+        if (list) win_focus(list); else cur = 0;
+
+        return;
+    }
+
+    // Moving scratchpad to current workspace.
+
+    int temp_ws = ws;
+
+    ws_sel(scratch_found->scratchpad);
+    win_del(scratch_found->w);
+    ws_save(scratch_found->scratchpad);
+
+    ws_sel(temp_ws);
+    new_scratch = temp_ws;
+    win_add(scratch_found->w);
+    ws_save(temp_ws);
+
+    XMapWindow(d, scratch_found->w);
+    win_focus(scratch_found);
+    XRaiseWindow(d, scratch_found->w);
 }
 
 void wm_quit(const Arg arg) {
