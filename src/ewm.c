@@ -86,7 +86,7 @@ void notify_motion(XEvent *e) {
             MAX(1, ww + ((mouse.button == 3) ? xd : 0)),
             MAX(1, wh + ((mouse.button == 3) ? yd : 0)));
 
-     if (mouse.button == 3)
+     if (mouse.button == 3 || resize_mouse)
         win_round_corners(mouse.subwindow, ROUND_CORNERS);
 
 }
