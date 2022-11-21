@@ -4,6 +4,7 @@
 #include <X11/XF86keysym.h>
 #include <X11/keysym.h>
 #include <X11/XKBlib.h>
+#include <X11/extensions/shape.h>
 #include <stdlib.h>
 #include <signal.h>
 #include <unistd.h>
@@ -84,6 +85,10 @@ void notify_motion(XEvent *e) {
             wy + ((mouse.button == 1) ? yd : 0),
             MAX(1, ww + ((mouse.button == 3) ? xd : 0)),
             MAX(1, wh + ((mouse.button == 3) ? yd : 0)));
+
+     if (mouse.button == 3 || resize_mouse)
+        win_round_corners(mouse.subwindow, ROUND_CORNERS);
+
 }
 
 void key_press(XEvent *e) {
@@ -183,6 +188,41 @@ void win_fs(const Arg arg) {
     } else {
         XMoveResizeWindow(d, cur->w, cur->wx, cur->wy, cur->ww, cur->wh);
     }
+  
+    win_round_corners(cur->w, cur->f ? 0 : ROUND_CORNERS);
+}
+
+void win_round_corners(Window w, int rad) {
+    unsigned int ww, wh, dia = 2 * rad;
+
+    win_size(w, &(int){1}, &(int){1}, &ww, &wh);
+
+    if (ww < dia || wh < dia) return;
+
+    Pixmap mask = XCreatePixmap(d, w, ww, wh, 1);
+
+    if (!mask) return;
+
+    XGCValues xgcv;
+    GC shape_gc = XCreateGC(d, mask, 0, &xgcv);
+
+    if (!shape_gc) {
+        XFreePixmap(d, mask);
+        return;
+    }
+
+    XSetForeground(d, shape_gc, 0);
+    XFillRectangle(d, mask, shape_gc, 0, 0, ww, wh);
+    XSetForeground(d, shape_gc, 1);
+    XFillArc(d, mask, shape_gc, 0, 0, dia, dia, 0, 23040);
+    XFillArc(d, mask, shape_gc, ww-dia-1, 0, dia, dia, 0, 23040);
+    XFillArc(d, mask, shape_gc, 0, wh-dia-1, dia, dia, 0, 23040);
+    XFillArc(d, mask, shape_gc, ww-dia-1, wh-dia-1, dia, dia, 0, 23040);
+    XFillRectangle(d, mask, shape_gc, rad, 0, ww-dia, wh);
+    XFillRectangle(d, mask, shape_gc, 0, rad, ww, wh-dia);
+    XShapeCombineMask(d, w, ShapeBounding, 0, 0, mask, ShapeSet);
+    XFreePixmap(d, mask);
+    XFreeGC(d, shape_gc);
 }
 
 void win_to_ws(const Arg arg) {
@@ -257,6 +297,8 @@ void configure_request(XEvent *e) {
         .sibling    = ev->above,
         .stack_mode = ev->detail
     });
+
+    win_round_corners(ev->window, ROUND_CORNERS);
 }
 
 void map_request(XEvent *e) {
@@ -269,6 +311,7 @@ void map_request(XEvent *e) {
 
     if (wx + wy == 0) win_center((Arg){0});
 
+    win_round_corners(w, ROUND_CORNERS);
     XMapWindow(d, w);
     win_focus(list->prev);
 }
@@ -319,10 +362,10 @@ void input_grab(Window root) {
 }
 
 void scratchpad_toggle(const Arg arg) {
-    int clients_c = 0;
+   // int clients_c = 0;
     client *scratch_found = NULL;
 
-    for (int i = 1; i < LEN(ws_list); i++) {
+    for (long unsigned int i = 1; i < LEN(ws_list); i++) {
         client *c = ws_list[i];
         if (c == NULL)
             continue;

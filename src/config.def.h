@@ -1,6 +1,7 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 #define MOD Mod4Mask
+#define ROUND_CORNERS 30
 
 const char* menu[]    = {"dmenu_run",           0};
 const char* term[]    = {"st",                  0};

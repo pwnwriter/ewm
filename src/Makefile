@@ -11,7 +11,7 @@ config.h:
 	cp config.def.h config.h
 
 ewm: ewm.c ewm.h config.h Makefile
-	$(CC) -O3 $(CFLAGS) -o $@ $< -lX11 $(LDFLAGS)
+	$(CC) -O3 $(CFLAGS) -o ewm ewm.c -lX11 -lXext $(LDFLAGS)
 
 install: all
 	install -Dm755 ewm $(DESTDIR)$(BINDIR)/ewm
