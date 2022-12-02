@@ -1,6 +1,6 @@
 <p align="center"><img src="https://raw.githubusercontent.com/pwnwriter/files/main/ewm/logos/ewm_gradient.png"  height="150px" width="200px"></p>
 <h1 align="center">EWM</h1>
-<p align="center">An elegant window manager (*500~ sloc!*).</p><br>
+<p align="center">An elegant window manager (*500~ sloc!*).</p>
 <p align="center">
 <img src="https://img.shields.io/badge/Maintained%3F-Yes-violet?style=for-the-badge">
 <img src="https://img.shields.io/github/license/pwnwriter/ewm?style=for-the-badge">
