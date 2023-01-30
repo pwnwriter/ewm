@@ -1,14 +1,10 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 #define MOD Mod4Mask
-#define ROUND_CORNERS 15
+#define ROUND_CORNERS 5
 
 const char* menu[]    = {"dmenu_run",           0};
 const char* term[]    = {"st",                  0};
-const char* ss[]      = {"swpb",     "-b",     0};
-const char* ssel[]    = {"swpb",     "-s",     0};
-const char* pmenu[]   = {"swpb",     "-p",     0};
-const char* wsearch[] = {"swpb",     "-w",     0};
 const char* briup[]   = {"brillo", "-A", "3",    0};
 const char* bridown[] = {"brillo", "-U", "3",    0};
 const char* voldown[] = {"pactl", "set-sink-volume", "0", "-5%",         NULL};
@@ -18,28 +14,24 @@ const char* scratch[] = {"st", 0};
 
 static struct key keys[] = {
    
-    {MOD,           XK_c,   win_kill,   {0}},
-    {MOD,           XK_x,   win_center, {0}},
-    {MOD,           XK_f,   win_fs,     {0}},
-    {MOD|ShiftMask, XK_q,   wm_quit,    {0}},
-    {MOD,           XK_r,   toggle_win_resize_mouse,   {0}},
+    {MOD,                 XK_c,       win_kill,   {0}},
+    {MOD,                 XK_x,       win_center, {0}},
+    {MOD,                 XK_f,       win_fs,     {0}},
+    {MOD|ShiftMask,       XK_q,       wm_quit,    {0}},
+    {MOD,                 XK_r,       toggle_win_resize_mouse,   {0}},
 
-    {Mod1Mask,           XK_Tab, win_next,   {0}},
-    {Mod1Mask|ShiftMask, XK_Tab, win_prev,   {0}},
+    {Mod1Mask,            XK_Tab,     win_next,   {0}},
+    {Mod1Mask|ShiftMask,  XK_Tab,     win_prev,   {0}},
 
-    {MOD,           XK_space,  run,  {.com = menu}},
-    {MOD,           XK_p,      run,  {.com = ss}},
-    {MOD|ShiftMask, XK_p,      run,  {.com = ssel}},
-    {MOD|ShiftMask, XK_x,      run,  {.com = pmenu}},
-    {MOD,           XK_w,      run,  {.com = wsearch}},
-    {MOD,           XK_Return, run,  {.com = term}},
-    {MOD,           XK_grave,  scratchpad_toggle,  {.com = scratch}},
+    {MOD,                 XK_space,   run,  {.com = menu}},
+    {MOD,                 XK_Return,  run,  {.com = term}},
+    {MOD,                 XK_grave,   scratchpad_toggle,  {.com = scratch}},
 
-    {0,   XF86XK_AudioLowerVolume,  run, {.com = voldown}},
-    {0,   XF86XK_AudioRaiseVolume,  run, {.com = volup}},
-    {0,   XF86XK_AudioMute,         run, {.com = volmute}},
-    {0,   XF86XK_MonBrightnessUp,   run, {.com = briup}},
-    {0,   XF86XK_MonBrightnessDown, run, {.com = bridown}},
+    {0,   XF86XK_AudioLowerVolume,    run, {.com = voldown}},
+    {0,   XF86XK_AudioRaiseVolume,    run, {.com = volup}},
+    {0,   XF86XK_AudioMute,           run, {.com = volmute}},
+    {0,   XF86XK_MonBrightnessUp,     run, {.com = briup}},
+    {0,   XF86XK_MonBrightnessDown,   run, {.com = bridown}},
 
     {MOD|Mod1Mask,  XK_k,  win_half,  {.com = (const char*[]){"n"}}},
     {MOD|Mod1Mask,  XK_j,  win_half,  {.com = (const char*[]){"s"}}},
