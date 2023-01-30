@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+CB=$(acpi -b | sed -n 's/Battery 0: [^,]*, \([0-9]*\)%.*/\1/p')
+
+if [[ "$CB" -lt 80 ]]; then
+  command dunstify "Recharge needed :(" "Your current battery level is ${CB}% charge asap !!"
+fi

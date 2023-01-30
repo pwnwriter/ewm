@@ -1,0 +1,3 @@
+#!/bin/sh
+# A script to connect to wifi using nmcli
+nmcli -c no d wifi list | tail -n +2 | sed 's/ \+/ /;s/Infra   [0-9]*/   /g;s/WPA. .*$//;s/Mbit\/s[[:space:]]*[0-9]*/Mbit\/s/g;s/Ad-Hoc  [0-9]*//g' | dmenu -l 20 -p Networks

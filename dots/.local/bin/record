@@ -1,0 +1,3 @@
+#!/bin/sh
+file=$1  
+ffmpeg -f x11grab  -i :0.0 "$file".mkv

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# convert documents to pdf using the doc2pdf.net service
+if test -z "$1"; then
+    echo usage: "$(basename "$0")" document && exit 1
+fi
+src=http://www.doc2pdf.net/convert/document.pdf
+curl -F "inputDocument=@$1" $src > "$HOME/study/${1%.*}.pdf" 
+echo "done myan study now"

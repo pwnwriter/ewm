@@ -1,0 +1,81 @@
+#!/usr/bin/env sh
+
+################################################
+##       A pure sh script used in ewm         ##
+##          SHELLCHECK PASSED                 ##
+################################################
+
+# Global variable to generate Random number
+
+ssname=$(date +%N|sed s/...$//).png
+
+# poweroff selection menu
+
+Poweroff() {
+	selected=$(printf "%s\n" "cancel" "shutdown" "reboot" "sleep" "tty"| dmenu)
+	if [ "$selected" =  "shutdown" ]; then
+		doas poweroff 
+	elif [ "$selected" = "reboot" ]; then
+                doas reboot
+        elif [ "$selected" = "sleep" ]; then
+                doas zzz
+        elif [ "$selected" = "cancel" ]; then
+ 		return
+        elif [ "$selected" = "tty" ]; then
+	        pkill x 
+        fi
+}
+
+# Check the directory to save screenshots. Create one if not found.
+
+Check_ssdir() {
+  if [ ! -d ~/pix/ss/ ]
+  then
+    mkdir -p ~/pix/ss
+  fi
+}
+
+# Take screenshot using imagemagick no selection menu
+
+ss_without_selection() {
+        Check_ssdir
+        import -window root ~/pix/ss/"$ssname"
+}
+
+# Take screenshot using imagemagick with selection menu
+
+ss_with_selection() {
+        Check_ssdir
+        import ~/pix/ss/"$ssname"
+}
+
+# Search in browser directly through dmenu 
+Search() {
+    URL='https://duckduckgo.com/?q='
+    QUERY=$(echo '' | dmenu -p "Search:")
+    if [ -n "$QUERY" ]; then
+    xdg-open "${URL}${QUERY}" 2> /dev/null
+fi
+}
+
+# getopts implementation for arguments
+
+while getopts 'sbpw' OPTION; do
+  case "$OPTION" in 
+    s) 
+      ss_with_selection ;;
+
+    b)
+      ss_without_selection ;;
+      
+    p) 
+        Poweroff ;;
+   
+    w)
+        Search ;;
+
+    ?) 
+      exit 1
+      ;;
+  esac
+done

@@ -1,0 +1,6 @@
+#!/bin/bash
+#dependency yt-dlp
+link=https://www.youtube.com/c/CodeVault
+echo -e "\e[36m##########################################################################################"
+echo -e "\e[35m############################ GENERATING LINKS PLEASE WAIT ################################"
+echo -e "\e[31m##########################################################################################" && yt-dlp --flat-playlist --skip-download "$link" --get-url --get-title | awk '{printf (NR%2==0) ? $0 "\n" : "\""$0"\" "}' | nl -w3 -s') '

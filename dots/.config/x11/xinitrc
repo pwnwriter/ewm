@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# xinitrc runs automatically when you run startx.
+
+if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/x11/xprofile" ]; then
+	. "${XDG_CONFIG_HOME:-$HOME/.config}/x11/xprofile"
+else
+	. "$HOME/.xprofile"
+fi
+
+
+#-------- Pywal ----------#
+#dir=~/.local/walls/
+#wall=b.jpg
+#wal -i ${dir}${wall}
+
+#------- utils ------------# 
+
+#picom &
+#dunst &
+slstatus &
+
+##------- Ewm -------------#
+#metis_ewm(){ 
+#  autostart & 
+#  exec dbus-launch ewm &
+#
+#}
+#
+#unset metis_ewm
+
+#------- Sound -----------#
+pipewire-pulse &
+wireplumber &
+pipewire &
+exec dbus-launch dwm

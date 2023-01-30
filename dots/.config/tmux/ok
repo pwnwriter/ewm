@@ -1,0 +1,32 @@
+unbind C-b
+set-option -g prefix  C-s
+# tmux splitting 
+unbind % # Remove default binding since we’re replacing it with | and -
+# split vertical
+bind | split-window -h
+# split horizontal
+bind - split-window -v
+# exporting default clipboard
+bind < run-shell -b "tmux save-buffer - | xclip -i -selection clipboard"
+
+# set the default shell 
+set-option -g default-shell /usr/bin/zsh
+
+# use the mouse to select only the contents of the pane and to go automatically to the copy-mode 
+set -g -q mouse on
+
+set -g status-bg black
+set -g status-fg yellow
+
+# Automatically renumber windows
+set-option -g renumber-windows on
+setw -g clock-mode-colour yellow
+setw -g mode-keys vi
+
+set-option -ag status-right "#[fg=red,dim,bg=default]#(pw) "
+
+
+# Sets the bar to up
+#set-option -g status-position up 
+
+

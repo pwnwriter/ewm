@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# I had problem while compiling as gcc / c99 by default makes an object 
+# as a.out, So to resolve this problem i made this script.
+
+compiler=gcc
+file=$1
+out=$(echo "$1" | cut -d. -f1 )
+
+command "$compiler" "$file" -o "$out"

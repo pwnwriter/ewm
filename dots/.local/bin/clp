@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+
+file=$*
+
+command xclip -sel c ${file} && notify-send "copied ${file}"

@@ -1,0 +1,146 @@
+.TH EWM 1 2022-11-03 GNU
+
+.SH NAME
+ewm \- elegant window manager
+
+.SH DESCRIPTION
+Ewm is a small and cute floating only window manager for X11. It tries to stay out of the way so that valuable screen real estate can be used for much more important stuff. It has sane defaults, it strives to be minimal, compact, and fast. ewm is a beautiful pearl that has window centering features.
+
+.SH DEPENDENCIES
+.B \- libX11 libxinerama  libxft  freetype2
+
+.SH OPTIONAL DEPENDENCIES
+.B \- doas imagemagick
+
+.SH USAGE
+
+.SS WINDOW MANAGEMENT
+
+.TP
+.B Mouse
+focus under cursor
+
+.TP
+.B MOD + Left Mouse
+move window
+
+.TP
+.B MOD + Right Mouse
+resize window
+
+.TP
+.B MOD + Grave
+toggle scratchpad(st)
+
+.TP
+.B MOD + Alt + h
+split window to right
+
+.TP
+.B MOD + Alt + j
+split window to down
+
+.TP
+.B MOD + Alt + k
+split window to up
+
+.TP
+.B MOD + Alt + l
+split window to left
+
+.TP
+.B MOD + f
+toggle full screen
+
+.TP
+.B MOD + r
+resize window (mouse/touchpads)
+
+.TP
+.B MOD + shift + x
+powermenu (shutdown/reboot/sleep)
+
+.TP
+.B MOD + p
+screenshot
+
+.TP
+.B Mod + Shift + p
+screenshot selection
+
+.TP
+.B MOD + x
+center window
+
+.TP
+.B MOD + c
+kill window
+
+.TP
+.B MOD + 1\-6
+desktop swap
+
+.TP
+.B MOD + Shift + 1\-6
+send window to specified desktop
+
+.TP
+.B MOD + Shift + q
+kill ewm
+
+.TP
+.B Alt + TAB (alt\-tab)
+focus cycle
+
+.SS DEFAULT PROGRAMS
+
+.TP
+.B MOD + Return
+terminal st
+.TP
+.B MOD + space
+dmenu application launcher
+.TP
+.B MOD + shift + x
+powermenu	
+.TP
+.B MOD + p
+screenshot imagemagick/swpb
+.TP
+.B MOD + shift + p
+screenshot selection with menu imagemagick/swpb
+.TP
+.B MOD + w
+websearch	default browser/swpb
+.TP
+.B XF86_AudioLowerVolume
+volume down	pactl
+.TP
+.B XF86_AudioRaiseVolume
+volume up	pactl
+.TP
+.B XF86_AudioMute
+volume toggle	pactl
+.TP
+.B XF86_MonBrightnessUp
+brightness up	brillo
+.TP
+.B XF86_MonBrightnessDown
+brightness down	brillo
+
+.SH CUSTOMIZATION
+ewm is customized by creating a custom config.h and (re)compiling the source
+code. This keeps it fast, secure and simple.
+
+.SH ISSUES
+Java applications which use the XToolkit/XAWT backend may draw grey windows
+only. The XToolkit/XAWT backend breaks ICCCM-compliance in recent JDK 1.5 and early
+JDK 1.6 versions, because it assumes a reparenting window manager. Possible workarounds
+are using JDK 1.4 (which doesn't contain the XToolkit/XAWT backend) or 
+.B wmname LG3D
+(to pretend that a non-reparenting window manager is running that the
+XToolkit/XAWT backend can recognize) or when using OpenJDK setting the environment variable
+.BR _JAVA_AWT_WM_NONREPARENTING=1 .
+
+.SH ISSUE AND BUGS
+Report all the issues, bugs, feature requests and bugfixings to https://www.github.com/pwnwriter/ewm/issues
