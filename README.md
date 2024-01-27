@@ -15,20 +15,16 @@ ewm is a beautiful pearl that has window centering features.
 <br>
 
 ### Gallery
-ewm_01.png | ewm_o2.png 
-|--|--|
-![img](https://raw.githubusercontent.com/pwnwriter/ewm/images/kiss_ewm_01.png)|![img](https://raw.githubusercontent.com/pwnwriter/ewm/images/kiss_ewm_02.png)
-ewm_01.png|ewm_02.png
+| ![img](https://raw.githubusercontent.com/pwnwriter/ewm/images/kiss_ewm_01.png) | ![img](https://raw.githubusercontent.com/pwnwriter/ewm/images/kiss_ewm_02.png) |
+| --- | --- |
+| ![img](https://raw.githubusercontent.com/pwnwriter/ewm/images/kiss_ewm_07.png) | ![img](https://raw.githubusercontent.com/pwnwriter/ewm/images/kiss_ewm_04.png) |
+| ![img](https://raw.githubusercontent.com/pwnwriter/ewm/images/kiss_ewm_05.png) | ![img](https://raw.githubusercontent.com/pwnwriter/ewm/images/kiss_ewm_06.png) |
 
-ewm_03.png|ewm_04.png
-|--|--|
-![img](https://raw.githubusercontent.com/pwnwriter/ewm/images/kiss_ewm_07.png)|![img](https://raw.githubusercontent.com/pwnwriter/ewm/images/kiss_ewm_04.png)
-
-ewm_05.png|ewm_06.png
-|--|--|
-![img](https://raw.githubusercontent.com/pwnwriter/ewm/images/kiss_ewm_05.png)|![img](https://raw.githubusercontent.com/pwnwriter/ewm/images/kiss_ewm_06.png)
 <br>
 
 
 ### More: 
 \[[ WIKI ](https://github.com/pwnwriter/ewm/wiki)\] \[[ INSTALLATION ](https://github.com/pwnwriter/ewm/wiki/Installation)\] \[[ KEYBINDINGS ](https://github.com/pwnwriter/ewm/wiki/Keybindings)\]  
+
+<p align="center"><img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" /></p>
+<p align="center">Copyright &copy; 2022 - present<a href="https://pwnwriter.xyz" target="_blank"> pwnwriter xyz<a> 🍃</a> 
